@@ -9,10 +9,10 @@
     })
     
     app.get('/files', (req, res) => {
-      const dir = 'C:\\Users\\iammo\\OneDrive\\Desktop\\File System Backend\\files'; // Corrected path
+      const dir = 'Path of The folder';
       try {
           const files = fs.readdirSync(dir);
-          res.status(200).json({ files }); // Send files as JSON
+          res.status(200).json({ files }); 
       } catch (err) {
           console.error(err);
           res.status(500).send('Unable to read the directory');
@@ -21,7 +21,7 @@
   
     
   app.get('/files/:filename', (req, res) => {
-    const dir = 'C:\\Users\\iammo\\OneDrive\\Desktop\\File System Backend\\files'; // Corrected path
+    const dir = 'Path of The folder'; 
     const filename = req.params.filename;
     const filePath = path.join(dir, filename);
 
